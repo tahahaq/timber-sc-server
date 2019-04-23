@@ -12,6 +12,9 @@ exports.approveRequest = async (request) => {
             switch (request.participant) {
                 case 'Source':
                     let data = await sourceModel.findById(request._id);
+                    if(!data){
+                        throw new Error("Can't find data on given id")
+                    }
                     let object = data.toObject();
                     delete object._id;
                     delete object.__v;
@@ -31,6 +34,9 @@ exports.approveRequest = async (request) => {
                     return constants.responseMessages.Success;
                 case 'Shipper' :
                     let data1 = await shipperModel.findById(request._id);
+                    if(!data1){
+                        throw new Error("Can't find data on given id")
+                    }
                     let object1 = data1.toObject();
                     delete object1._id;
                     delete object1.__v;
@@ -40,6 +46,9 @@ exports.approveRequest = async (request) => {
                     return constants.responseMessages.Success;
                 case 'Designer' :
                     let data2 = await shipperModel.findById(request._id);
+                    if(!data2){
+                        throw new Error("Can't find data on given id")
+                    }
                     let object2 = data2.toObject();
                     delete object2._id;
                     delete object2.__v;
@@ -49,6 +58,9 @@ exports.approveRequest = async (request) => {
                     return constants.responseMessages.Success;
                 case 'Packager' :
                     let data3 = await shipperModel.findById(request._id);
+                    if(!data3){
+                        throw new Error("Can't find data on given id")
+                    }
                     let object3 = data3.toObject();
                     delete object3._id;
                     delete object3.__v;
