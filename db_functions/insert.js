@@ -40,7 +40,7 @@ exports.approveRequest = async (request) => {
                     let object1 = data1.toObject();
                     delete object1._id;
                     delete object1.__v;
-                    delete object.participant;
+                    delete object1.participant;
                     await axios.post(constants.hyperledgerUrl + 'Shipper', object1);
                     await shipperModel.findByIdAndUpdate(request._id, {is_approved: true});
                     return constants.responseMessages.Success;
@@ -52,7 +52,7 @@ exports.approveRequest = async (request) => {
                     let object2 = data2.toObject();
                     delete object2._id;
                     delete object2.__v;
-                    delete object.participant;
+                    delete object2.participant;
                     await axios.post(constants.hyperledgerUrl + 'Designer', object2);
                     await designerModel.findByIdAndUpdate(request._id, {is_approved: true});
                     return constants.responseMessages.Success;
@@ -64,7 +64,7 @@ exports.approveRequest = async (request) => {
                     let object3 = data3.toObject();
                     delete object3._id;
                     delete object3.__v;
-                    delete object.participant;
+                    delete object3.participant;
                     await axios.post(constants.hyperledgerUrl + 'Packager', object3);
                     await packagerModel.findByIdAndUpdate(request._id, {is_approved: true});
                     return constants.responseMessages.Success;
