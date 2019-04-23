@@ -45,7 +45,7 @@ exports.approveRequest = async (request) => {
                     await shipperModel.findByIdAndUpdate(request._id, {is_approved: true});
                     return constants.responseMessages.Success;
                 case 'Designer' :
-                    let data2 = await shipperModel.findById(request._id);
+                    let data2 = await designerModel.findById(request._id);
                     if(!data2){
                         throw new Error("Can't find data on given id")
                     }
@@ -57,7 +57,7 @@ exports.approveRequest = async (request) => {
                     await designerModel.findByIdAndUpdate(request._id, {is_approved: true});
                     return constants.responseMessages.Success;
                 case 'Packager' :
-                    let data3 = await shipperModel.findById(request._id);
+                    let data3 = await packagerModel.findById(request._id);
                     if(!data3){
                         throw new Error("Can't find data on given id")
                     }
