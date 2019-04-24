@@ -10,6 +10,8 @@ packagerSchema = new mongoose.Schema({
     member_id: String,
     company : String,
     company_id : String,
+    industry_standard_certification : String,
+    timestamp : String,
     is_approved : Boolean
 
 

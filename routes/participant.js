@@ -34,7 +34,7 @@ router.post('/request', function (req, res) {
 
 
 
-router.get("/:id", function (req, res) {
+router.get("/timber/:id", function (req, res) {
     db_read.getDataByTimberId(req.params.id).then((response) => {
         //SUCCESS
         res.status(200).send(

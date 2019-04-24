@@ -5,7 +5,6 @@ shipperSchema = new mongoose.Schema({
     company: String,
     quantity: String,
     timber_id: String,
-    company : String,
     company_id : String,
     participant : String,
     est_delivery_time: String,
